@@ -5,6 +5,7 @@
 *.hcl
 *.txt
 
+
 # logs
 *.log
 
