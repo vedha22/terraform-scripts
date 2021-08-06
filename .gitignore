@@ -3,7 +3,7 @@
 *.tfstate.backup
 *.tfstate.lock.info
 *.hcl
-my-azure-details.txt
+*.txt
 
 # logs
 *.log
