@@ -1,7 +1,7 @@
 variable "client_secret" {
     description = "Client SPN secret"
     type = string
-    default = "dm623sNtnto4QKLki3y-aHoXf8AryOocU-"
+    default = ""
 }
 
 variable "rg_objects" {
