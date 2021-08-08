@@ -10,4 +10,4 @@
 *.log
 
 # Directories
-.terraform\
+.terraform
