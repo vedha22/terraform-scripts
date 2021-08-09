@@ -65,3 +65,29 @@ variable "nsg_rule_objects" {
     }
   }
 }
+
+variable "vnet_objects" {
+  description = "Create virtual network"
+  type = map
+  default = {
+    vnet01 = {
+      location = "eastus", rg = "RG01", address_space=["10.0.0.0/16"]
+    },
+    vnet02 = {
+      location = "westus", rg = "RG02", address_space=["10.0.0.0/16"]
+    }
+  }
+}
+
+variable "subnet_objects" {
+  description = "Create subnet"
+  type = map
+  default = {
+    subnet01 = {
+      location = "eastus", rg = "RG01", vnet="vnet01", address_prefixes=["10.0.1.0/24"]
+    },
+    subnet02 = {
+      location = "westus", rg = "RG02", vnet="vnet02", address_prefixes=["10.0.1.0/24"]
+    }
+  }
+}
