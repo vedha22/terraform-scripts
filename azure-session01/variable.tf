@@ -21,3 +21,47 @@ variable "rg_objects" {
     }
   }
 }
+
+variable "nsg_objects" {
+  description = "Network security groups to be created"
+  type = map
+  default = {
+    nsg01 = {
+      location = "eastus", rg = "RG01"
+    },
+    nsg02 = {
+      location = "westus", rg = "RG02"
+    }
+  }
+}
+
+variable "nsg_rule_objects" {
+  description = "Network security group rules to be created"
+  type = map
+  default = {
+    testrule01 = {
+      priority                    = 100,
+      direction                   = "Outbound",
+      access                      = "Allow",
+      protocol                    = "Tcp",
+      source_port_range           = "*",
+      destination_port_range      = "*",
+      source_address_prefix       = "*",
+      destination_address_prefix  = "*",
+      resource_group_name         = "RG01",
+      network_security_group_name = "nsg01"
+    },
+    testrule02 = {
+      priority                    = 100,
+      direction                   = "Outbound",
+      access                      = "Allow",
+      protocol                    = "Tcp",
+      source_port_range           = "*",
+      destination_port_range      = "*",
+      source_address_prefix       = "*",
+      destination_address_prefix  = "*",
+      resource_group_name         = "RG02",
+      network_security_group_name = "nsg02"
+    }
+  }
+}
