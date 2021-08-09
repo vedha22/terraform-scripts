@@ -33,7 +33,7 @@ module "nsg_rule" {
     rule_network_security_group_name = each.value.network_security_group_name
 }
 
-# Create a virtual network
+# Create a virtual network_new
 
 # Create a subnet
 
